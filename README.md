@@ -9,11 +9,11 @@ run the script with ./tester.sh
 
 What it does/How it works
 -------------------------
-A total of 4 possible options exist for each operation:
-	read c write c
-	read c write f
-	read f write c
-	read f write f
+A total of 4 possible options exist for each operation:\
+	read c write c\
+	read c write f\
+	read f write c\
+	read f write f\
 These 4 cases applied to the 2 types of operations (Encrypt or Decrypt) 
 essentially translates to 8 total types of tests to perform with however many
 trials you want to run for each type of test
