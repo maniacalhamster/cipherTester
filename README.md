@@ -21,7 +21,7 @@ trials you want to run for each type of test
 Testing will take place in the order desribed above, chosen for what I believed
 to be the simplest to most complex type of input to script was made to handle, 
 and interrupting tseting if any of these tests fail (Recommend fixing the simple
-cases before mobingg on to the more complex tests
+cases before moving on to the more complex tests
 
 The tester script has a built in array of keys and message to work with, which
 provides 3 trials for each case (9 trials in some cases) but you are free to
