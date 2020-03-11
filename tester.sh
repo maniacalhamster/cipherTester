@@ -127,7 +127,7 @@ then
 	read -p "Press Enter to open vimdiff to view these differences"
 	vimdiff scriptCout driverCout
 else
-	echo "Awesome possum! No differences from driver for Encrypt from C to C"
+	echo "Awesome possum! No differences from driver for Decrypt from C to C"
 fi
 
 # SECOND TEST: read c write f [write to out]
