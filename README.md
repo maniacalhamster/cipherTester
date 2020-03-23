@@ -34,6 +34,14 @@ Keep in mind that the instructors have reiterated countless times that only
 valid input are expected to be handled by your code - I have no say over how 
 well my little tester script will react to invalid trials in key or message.
 
+I HAVE, however, managed to strip the warning message that the driver gives for
+inputting a file for input (the red IF THE FILE HAS CHARACTERS OTHER THA...) by
+using sed to parse the output through a substitution (regular expressions used to
+find the "^[[..." and replace them with 0. 
+In short, the tester script will only pass in expected input and will not get any
+error messages from the driver and the sole warning message that you DO get with
+valid input has stripped from driver output when comparing with your script output.
+
 One final note is that this tester is SUPER jumpy and will most likely call out
 differences between your script and the public driver. If this is the case, just
 let it open up vimdiff and check out the differences yourself. If you want to be
