@@ -13,7 +13,8 @@
 # test cases to use will use following keys and messages
 # feel free to add you own keys and messages if you want further testing!!
 keys=("TESTER" "EXAMPLE" "SHORTKEY")
-messages=("HELLO THERE BOB" "THIS WILL GET ENCRYPTED" "MUCH LONGER WORD THAN KEY")
+messages=("HELLO THERE BOB" "THIS WILL GET ENCRYPTED" "MUCH LONGER WORD THAN KEY"
+		" THERE IS A WHITESPACE BEFORE")
 
 # inp, driverCout, and scriptCout must be reset to empty files manually
 # all other output files just need to exist - it is the task of encrypt/decrypt
@@ -70,7 +71,7 @@ fi
 for i in ${!keys[@]}
 do
 	printf "e\n${keys[$i]}\nf\ninp\nc\n" | ./crypt.sh >> scriptCout
-	printf "e\n${keys[$i]}\nf\ninp\nc\n" | crypt_driver | sed 's:.[[]0m\|.[[]1.*\|WE.*::g' >> driverCout
+	printf "e\n${keys[$i]}\nf\ninp\nc\n" | crypt_driver | sed 's:.[[]1.*\|W.*[.]\|.[[]0m::g' >> driverCout
 done
 
 if [ "`diff scriptCout driverCout`" != "" ]
@@ -154,7 +155,7 @@ fi
 for i in ${!keys[@]}
 do
 	printf "d\n${keys[$i]}\nf\ninp\nc\nn" | ./crypt.sh >> scriptCout
-	printf "d\n${keys[$i]}\nf\ninp\nc\nn" | crypt_driver | sed 's:.[[]0m\|.[[]1.*\|WE.*::g' >> driverCout
+	printf "d\n${keys[$i]}\nf\ninp\nc\nn" | crypt_driver | sed 's:.[[]1.*\|W.*[.]\|.[[]0m::g' >> driverCout
 done
 
 if [ "`diff scriptCout driverCout`" != "" ]
